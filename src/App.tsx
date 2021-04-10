@@ -1,6 +1,6 @@
 import { useCallback } from "react";
-import "./app.css";
 import CustomInput from "./CustomInput/CustomInput";
+import "./app.css";
 
 function App() {
   const handleOnChange = useCallback((value: number) => {
