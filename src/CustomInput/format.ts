@@ -21,5 +21,5 @@ export const formatValue = (value: number): string => {
 };
 
 export const deformatValue = (value: string): number => {
-  return +value.replace(",", ".").replaceAll("'", "");
+  return +value.replace(",", ".").replaceAll("'", "").replaceAll(" ", "");
 };

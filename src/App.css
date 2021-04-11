@@ -22,4 +22,24 @@
 
 .input-wrapper {
   max-width: 140px;
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper button {
+  position: absolute;
+  right: 0;
+  padding: 0;
+  height: 16px;
+  border: 0;
+  width: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.up {
+  top: 0;
+}
+.down {
+  bottom: 0;
 }

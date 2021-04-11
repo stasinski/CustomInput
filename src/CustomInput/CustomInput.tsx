@@ -2,6 +2,7 @@ import { Input } from "antd";
 import { useState } from "react";
 import { deformatValue, formatValue } from "./format";
 import { isValidValue } from "./validation";
+import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 
 interface Props {
   onChangeCallback?: (value: number) => void;
@@ -30,13 +31,29 @@ const CustomInput: React.FC<Props> = ({
     setValue(formated);
     onBlurCallback?.(deformated);
   };
+  const handleInc = () => {
+    const deformated = deformatValue(value);
+    setValue(formatValue(deformated + 1));
+  };
+  const handleDec = () => {
+    const deformated = deformatValue(value);
+    setValue(formatValue(deformated - 1));
+  };
 
   return (
-    <Input
-      value={value}
-      onBlur={handleOnBlur}
-      onChange={(e) => handleChange(e.target.value)}
-    />
+    <>
+      <Input
+        value={value}
+        onBlur={handleOnBlur}
+        onChange={(e) => handleChange(e.target.value)}
+      />
+      <button className="up" onClick={handleInc}>
+        <AiOutlineArrowUp />
+      </button>
+      <button className="down" onClick={handleDec}>
+        <AiOutlineArrowDown />
+      </button>
+    </>
   );
 };
 
